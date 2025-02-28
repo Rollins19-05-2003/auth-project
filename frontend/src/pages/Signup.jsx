@@ -26,7 +26,8 @@ function Signup() {
       return;
     }
     try {
-      await axios.post(`http://localhost:${PORT}/signup`, { name, email, password });
+      // await axios.post(`http://localhost:${PORT}/signup`, { name, email, password });
+      await axios.post(`https://auth-project-topaz-eight.vercel.app/signup`, { name, email, password });
       toast.success("Signup successful! Redirecting to login...", { theme: "colored" });
       setTimeout(() => navigate("/login"), 3000); // Delay to allow flash message to be seen
     } catch (error) {
