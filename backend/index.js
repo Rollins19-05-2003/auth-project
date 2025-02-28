@@ -34,6 +34,10 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", UserSchema);
 
+// 🔹 **Normal route**
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
+})
 // 🔹 **Signup Route**
 app.post("/signup", async (req, res) => {
   try {

@@ -31,7 +31,8 @@ function Signup() {
       toast.success("Signup successful! Redirecting to login...", { theme: "colored" });
       setTimeout(() => navigate("/login"), 3000); // Delay to allow flash message to be seen
     } catch (error) {
-      toast.error("Signup failed. Email may already be registered.", { theme: "dark" });
+      console.log(error)
+      toast.error("Signup failed.", { theme: "dark" });
     }
   };
 
