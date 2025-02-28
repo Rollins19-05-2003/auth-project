@@ -17,8 +17,8 @@ function Login() {
       return;
     }
     try {
-      // const response = await axios.post(`http://localhost:${PORT}/login`, { email, password });
-      const response = await axios.post(`https://auth-project-topaz-eight.vercel.app/login`, { email, password });
+      const response = await axios.post(`http://localhost:${PORT}/login`, { email, password });
+      // const response = await axios.post(`https://auth-project-topaz-eight.vercel.app/login`, { email, password });
       toast.success("Login successful! Redirecting...", { theme: "colored" });
       localStorage.setItem("token", response.data.token);
       setTimeout(() => navigate("/"), 3000); // Wait 3 seconds before redirecting
