@@ -17,7 +17,7 @@ function Signup() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    if (!name || !email || !password) {
+    if (!email || !password) {
       toast.error("All fields are required!", { theme: "dark" });
       return;
     }
@@ -27,7 +27,7 @@ function Signup() {
     }
     try {
       // await axios.post(`http://localhost:${PORT}/signup`, { name, email, password });
-      await axios.post(`https://auth-project-backend-roan.vercel.app/signup`, { name, email, password });
+      await axios.post(`https://auth-project-backend-roan.vercel.app/signup`, { email, password });
       toast.success("Signup successful! Redirecting to login...", { theme: "colored" });
       setTimeout(() => navigate("/login"), 3000); // Delay to allow flash message to be seen
     } catch (error) {
